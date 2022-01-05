@@ -6,11 +6,16 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- script: 
-    sudo npm install -g snyk
-    sudo snyk auth $(Snyk_Token)
-    sudo snyk code test --fail-on=all
-  displayName: 'snyk SAST'
-
-
+- task: SnykSecurityScan@1
+  inputs:
+    serviceConnectionEndpoint: 'Snyk_Token'
+    testType: 'app'
+    monitorWhen: 'never'
+    failOnIssues: true
+- task: SnykSecurityScan@1
+  inputs:
+    serviceConnectionEndpoint: 'Snyk_Token'
+    testType: 'app'
+    monitorWhen: 'never'
+    failOnIssues: true
+    additionalArguments: '--code'
