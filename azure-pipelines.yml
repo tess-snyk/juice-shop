@@ -6,6 +6,9 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+steps:
+
+
 - task: SnykSecurityScan@1
   inputs:
     serviceConnectionEndpoint: 'Snyk_Token'
