@@ -10,7 +10,7 @@ steps:
 - script: 
     sudo npm install -g snyk
     sudo snyk auth $(Snyk_Token)
-    sudo snyk code test --severity-threshold-high
+    sudo snyk code test --fail-on=all
   displayName: 'snyk SAST'
 
 
