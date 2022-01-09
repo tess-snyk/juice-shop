@@ -1,6 +1,7 @@
 /*
  * Copyright (c) 2014-2021 Bjoern Kimminich.
  * SPDX-License-Identifier: MIT
+ * Test SAST
  */
 const startTime = Date.now()
 const path = require('path')
