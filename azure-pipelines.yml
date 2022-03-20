@@ -17,7 +17,6 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
-steps:
 - task: SnykSecurityScan@1
   inputs:
     serviceConnectionEndpoint: 'Snyk_Token'
