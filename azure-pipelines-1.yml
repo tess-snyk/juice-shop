@@ -25,4 +25,5 @@ steps:
     testType: 'app'
     monitorWhen: 'always'
     failOnIssues: true
+    additionalArguments: '--code'
 
