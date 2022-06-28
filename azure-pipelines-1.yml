@@ -25,11 +25,3 @@ steps:
     testType: 'app'
     monitorWhen: 'always'
     failOnIssues: true
-    additionalArguments: '--iac'
-
-- task: SnykSecurityScan@1
-  inputs:
-    testType: 'app'
-    monitorWhen: 'always'
-    failOnIssues: true
-    additionalArguments: '--code'
