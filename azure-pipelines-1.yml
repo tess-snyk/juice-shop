@@ -17,11 +17,13 @@ steps:
 
 - script: |
     npm install
+    npm i -g snyk-delta
   displayName: 'npm install'
 
 - task: SnykSecurityScan@1
   inputs:
     serviceConnectionEndpoint: 'Snyk_Token'
     testType: 'app'
-    monitorWhen: 'always'
+    monitorWhen: 'never'
     failOnIssues: true
+    additionalArguments: 'snyk test -json --print-deps | snyk-delta'
