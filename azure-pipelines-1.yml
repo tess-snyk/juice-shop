@@ -17,7 +17,6 @@ steps:
 
 - script: |
     npm install
-    npm i -g snyk-delta
   displayName: 'npm install'
 
 - task: SnykSecurityScan@1
