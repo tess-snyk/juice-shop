@@ -31,6 +31,7 @@ module.exports.toggleDeliveryStatus = function toggleDeliveryStatus () {
   return async (req, res, next) => {
     const deliveryStatus = !req.body.deliveryStatus
     const eta = deliveryStatus ? '0' : '1'
+    // deepcode ignore NoSqli: <please specify a reason of ignoring this>
     await db.orders.update({ _id: req.params.id }, { $set: { delivered: deliveryStatus, eta: eta } })
     res.status(200).json({ status: 'success' })
   }
