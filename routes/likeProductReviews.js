@@ -3,6 +3,9 @@
  * SPDX-License-Identifier: MIT
  */
 
+/*another comment
+*/
+
 const utils = require('../lib/utils')
 const challenges = require('../data/datacache').challenges
 const db = require('../data/mongodb')
@@ -30,6 +33,7 @@ module.exports = function productReviews () {
                   if (likedBy[i] === user.data.email) {
                     count++
                   }
+                  //a change
                 }
                 utils.solveIf(challenges.timingAttackChallenge, () => { return count > 2 })
                 db.reviews.update(
