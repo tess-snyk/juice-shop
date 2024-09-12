@@ -1,0 +1,17 @@
+# Node.js
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: SnykSecurityScan@1
+  inputs:
+    serviceConnectionEndpoint: 'Snyk_Token'
+    testType: 'app'
+    monitorWhen: 'never'
+    failOnIssues: true
+    additionalArguments: '--code'
+
